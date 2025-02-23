@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        /* Base styles for better readability and consistency */
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --background-color: #f8f9fa;
+            --text-color: #34495e;
+            --code-background: #f4f4f4;
+            --highlight-background: #e8f4f8;
+            --success-color: #2ecc71;
+            --warning-color: #ff9800;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            margin: 0;
+            padding: 20px;
+        }
+
+        /* Container for better content organization */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header styling */
+        .header {
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .header h1 {
+            color: white;
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4 {
+            color: var(--primary-color);
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+
+        p {
+            margin-bottom: 1.2em;
+        }
+
+        /* Content sections */
+        .section {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 20px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        /* Mathematical notation enhancements */
+        .math-block {
+            background: var(--highlight-background);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+
+        /* Code blocks with syntax highlighting support */
+        .code-block {
+            margin: 20px 0;
+            background: var(--code-background);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .code-title {
+            background: var(--primary-color);
+            color: white;
+            padding: 8px 15px;
+            font-size: 0.9em;
+            font-family: monospace;
+        }
+
+        pre {
+            margin: 0;
+            padding: 15px;
+            overflow-x: auto;
+        }
+
+        code {
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 0.9em;
+        }
+
+        /* Inline code */
+        code:not(pre code) {
+            background: var(--code-background);
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        th, td {
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        th {
+            background: var(--secondary-color);
+            color: white;
+            font-weight: 600;
+        }
+
+        tr:nth-child(even) {
+            background: var(--background-color);
+        }
+
+        /* Special content blocks */
+        .key-points {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid var(--success-color);
+            margin: 20px 0;
+        }
+
+        .note {
+            background: var(--highlight-background);
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid var(--secondary-color);
+            margin: 20px 0;
+        }
+
+        .warning {
+            background: #fff3e0;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid var(--warning-color);
+            margin: 20px 0;
+        }
+
+        /* Images and figures */
+        figure {
+            margin: 20px 0;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        figcaption {
+            color: var(--text-color);
+            font-style: italic;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            .header {
+                padding: 20px;
+            }
+
+            .section {
+                padding: 15px;
+            }
+
+            table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+    </style>
+    <!-- MathJax Configuration -->
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true,
+                processEnvironments: true
+            },
+            options: {
+                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+            }
+        };
+    </script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <!-- Example usage -->
+    <div class="container">
+        <header class="header">
+            <h1>Sample Lecture Notes</h1>
+        </header>
+
+        <section class="section">
+            <h2>Mathematical Example</h2>
+            <div class="math-block">
+                The quadratic formula: $x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$
+            </div>
+
+            <h2>Code Example</h2>
+            <div class="code-block">
+                <div class="code-title">Python</div>
+                <pre><code>def quadratic_solver(a, b, c):
+    discriminant = b**2 - 4*a*c
+    x1 = (-b + math.sqrt(discriminant)) / (2*a)
+    x2 = (-b - math.sqrt(discriminant)) / (2*a)
+    return x1, x2</code></pre>
+            </div>
+
+            <h2>Important Notes</h2>
+            <div class="key-points">
+                <h3>Key Points</h3>
+                <ul>
+                    <li>Clear hierarchy with headings</li>
+                    <li>Mathematical notation support</li>
+                    <li>Code syntax highlighting</li>
+                    <li>Responsive design</li>
+                </ul>
+            </div>
+
+            <div class="note">
+                <strong>Note:</strong> This is an example of a note block for important information.
+            </div>
+        </section>
+    </div>
+</body>
+</html>
